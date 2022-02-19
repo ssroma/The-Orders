@@ -1,11 +1,12 @@
+import React from 'react';
 import Class from './FormInput.module.css';
 
-const FormInput = (props) => {
+const FormInput = React.forwardRef((props, ref) => {
     const {label, input} = props
     return <div className={Class.input} >
         <label htmlFor={input.id}>{label}</label>
-        <input {...input}/>
+        <input ref={ref} {...input}/>
     </div>
-};
+});
 
 export default FormInput;
